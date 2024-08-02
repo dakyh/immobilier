@@ -16,7 +16,7 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
-    <title>Holux Immobilier - Jonathan Araldi</title>
+    <title>HALBI</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">
-                Holux Immobilier <i class='bx bxs-home-alt-2'></i>
+                Holding Ahmad Loyal Business Invest <i class='bx bxs-home-alt-2'></i>
             </a>
 
             <div class="nav__menu">
@@ -46,7 +46,7 @@
                     <li class="nav__item">
                         <a href="#value" class="nav__link">
                             <i class='bx bx-award' ></i>
-                            <span>Valeur</span>
+                            <span>Services</span>
                         </a>
                     </li>
 
@@ -63,7 +63,7 @@
             <i class='bx bx-moon change-theme' id="theme-button" ></i>
 
             <a href="#subscribe" class="button nav__button">
-                S'abonner
+                Mon espace
             </a>
         </nav>
     </header>
@@ -82,11 +82,6 @@
                         oublier toutes les difficultés à trouver une résidence pour vous.
                     </p>
 
-                    <form action="" class="home__search">
-                        <i class='bx bxs-map'></i>
-                        <input type="search" placeholder="Par localisation..." class="home__search-input">
-                        <button class="button">Recherche</button>
-                    </form>
 
                     <div class="home__value">
                         <div>
@@ -94,7 +89,7 @@
                                 9K <span>+</span>
                             </h1>
                             <span class="home__value-description">
-                                Produit <br> Premiun
+                                biens <br> immobiliers
                             </span>
                         </div>
                         <div>
@@ -110,7 +105,7 @@
                                 28K <span>+</span>
                             </h1>
                             <span class="home__value-description">
-                                Prix <br> Remportés
+                                services <br> d'accompagnements
                             </span>
                         </div>
                     </div>
@@ -260,6 +255,10 @@
                     <div class="swiper-button-next">
                         <i class='bx bx-chevron-right'></i>
                     </div>
+                    
+                    <div class="">
+                       <a href="biens">voir plus...</a>
+                    </div>
                     <div class="swiper-button-prev">
                         <i class='bx bx-chevron-left' ></i>
                     </div>
@@ -280,13 +279,12 @@
 
                 <div class="value__content">
                     <div class="value__data">
-                        <span class="section__subtitle">Nos Valeur</span>
+                        <span class="section__subtitle">Nos services</span>
                         <h2 class="section__title">
-                            Valeur que nous vous offrons<span>.</span>
+                            les différents types d'accompagnements que nous vous offrons<span>.</span>
                         </h2>
                         <p class="value__description">
                             Nous sommes toujours prêts à vous aider en vous fournissant le meilleur service possible. 
-                            Nous croyons qu'un bon endroit pour vivre peut rendre votre vie meilleure.
                         </p>
                     </div>
 
@@ -295,7 +293,7 @@
                             <header class="value__accordion-header">
                                 <i class='bx bxs-shield-x value__accordion-icon' ></i>
                                 <h3 class="value__accordion-title">
-                                    Les meilleurs taux d'intérêt du marché
+                                    service1
                                 </h3>
                                 <div class="value__accordion-arrow">
                                     <i class='bx bxs-down-arrow' ></i>
@@ -304,9 +302,7 @@
 
                             <div class="value__accordion-content">
                                 <p class="value__accordion-description">
-                                    Chaque mois nos partenaires bancaires, nationaux, régionaux ou en ligne, 
-                                    nous transmettent leurs barèmes de taux de prêt immobilier, nous donnant
-                                    ainsi une vision globale des taux d'intérêts pratiqués.
+                                    description
                                 </p>
                             </div>
                         </div>
@@ -315,7 +311,7 @@
                             <header class="value__accordion-header">
                                 <i class='bx bxs-x-square value__accordion-icon' ></i>
                                 <h3 class="value__accordion-title">
-                                    Prévenir l'instabilité des prix
+                                    service2
                                 </h3>
                                 <div class="value__accordion-arrow">
                                     <i class='bx bxs-down-arrow' ></i>
@@ -335,7 +331,7 @@
                             <header class="value__accordion-header">
                                 <i class='bx bxs-bar-chart-square value__accordion-icon' ></i>
                                 <h3 class="value__accordion-title">
-                                    Les meilleurs prix du marché
+                                    service3
                                 </h3>
                                 <div class="value__accordion-arrow">
                                     <i class='bx bxs-down-arrow' ></i>
@@ -353,7 +349,7 @@
                                 <header class="value__accordion-header">
                                     <i class='bx bxs-check-square value__accordion-icon' ></i>
                                     <h3 class="value__accordion-title">
-                                        Sécurité de vos données
+                                        services4
                                     </h3>
                                     <div class="value__accordion-arrow">
                                         <i class='bx bxs-down-arrow ' ></i>
@@ -367,8 +363,16 @@
                                     </p>
                                 </div>
                             </div>
+                            <div class="value__accordion-item">
+                                <header class="value__accordion-header">
+                                    <a href="services">voir plus...</a>
+                                    
+                                </header>
+
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
             </section>
 
@@ -400,85 +404,48 @@
                             <div class="contact__card-box">
                                 <div class="contact__card-info">
                                     <i class='bx bxs-phone-call'></i>
-
+                        
                                     <div>
                                         <h3 class="contact__card-title">
                                             Appelez
                                         </h3>
                                         <p class="contact__card-description">
-                                            08 01 02 03 04
+                                             77 637 45 49
                                         </p>
                                     </div>
                                 </div>
-
-                                <button class="button contact__card-button">
-                                    Appelez <br> maintenent
-                                </button>
+                        
+                                <a href="tel:+221776374549" class="button contact__card-button" style="text-align: center">
+                                    Appelez <br> maintenant
+                                </a>
                             </div>
-                            
-                            <div class="contact__card-box">
-                                <div class="contact__card-info">
-                                    <i class='bx bxs-message-rounded-dots'></i>
-
-                                    <div>
-                                        <h3 class="contact__card-title">
-                                            Livechat
-                                        </h3>
-                                        <p class="contact__card-description">
-                                            Talk live
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <button class="button contact__card-button">
-                                    Livechat <br> maintenant
-                                </button>
-                            </div>
-
-                            <div class="contact__card-box">
-                                <div class="contact__card-info">
-                                    <i class='bx bxs-video'></i>
-
-                                    <div>
-                                        <h3 class="contact__card-title">
-                                            Appel vidéo
-                                        </h3>
-                                        <p class="contact__card-description">
-                                            Google Meet
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <button class="button contact__card-button">
-                                    Démarrer un <br> appel vidéo
-                                </button>
-                            </div>
-
+                        
                             <div class="contact__card-box">
                                 <div class="contact__card-info">
                                     <i class='bx bxs-envelope'></i>
-
+                        
                                     <div>
                                         <h3 class="contact__card-title">
                                             Message
                                         </h3>
                                         <p class="contact__card-description">
-                                            Email
+                                            Whatsapp
                                         </p>
                                     </div>
                                 </div>
-
-                                <button class="button contact__card-button">
+                        
+                                <a href="https://wa.me/+221776374549" class="button contact__card-button" style="text-align: center">
                                     Envoyez <br> un message
-                                </button>
+                                </a>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </section>
 
             <!--==================== SUBSCRIBE ====================-->
-            <section class="subscribe section" id="subscribe">
+            {{-- <section class="subscribe section" id="subscribe">
                 <div class="subscribe__container container">
                     <h1 class="subscribe__title">
                         S'abonner à Holux Immobilier
@@ -491,7 +458,7 @@
                         S'abonner
                     </a>
                 </div>
-            </section>
+            </section> --}}
         </main>
 
         <!--==================== FOOTER ====================-->
@@ -499,7 +466,7 @@
             <div class="footer__container container grid">
                 <div>
                     <a href="#" class="footer__logo">
-                        Holux Immobilier <i class='bx bxs-home-alt-2'></i>
+                        Holding Ahmad Loyal Business Invest <i class='bx bxs-home-alt-2'></i>
                     </a>
                     <p class="footer__description">
                         Notre vision est de faire en sorte que tout le monde <br> 
@@ -518,9 +485,7 @@
                                 <a href="#" class="footer__link">Qui sommes-nous</a>
                             </li>
 
-                            <li>
-                                <a href="#" class="footer__link">Avis clients</a>
-                            </li>
+                            
 
                             <li>
                                 <a href="#" class="footer__link">Conditions générales de ventes</a>
@@ -550,9 +515,6 @@
                                 <a href="#" class="footer__link">Nous rejoindre !</a>
                             </li>
 
-                            <li>
-                                <a href="#" class="footer__link">Blog</a>
-                            </li>
                         </ul>
                     </div>
 
@@ -598,7 +560,7 @@
 
             <div class="footer__info container">
                 <span class="footer__copy">
-                    &#169; Holux Immobillier par Jonathan Araldi.
+                    &#169; Holding Ahmad Loyal Business Invest.
                 </span>
 
                 <div class="footer__privacy">
