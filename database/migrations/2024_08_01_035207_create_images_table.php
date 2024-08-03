@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->string('url');
+            $table->foreignId('bien_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.

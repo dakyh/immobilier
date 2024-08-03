@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateAccompagnementBienTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('accompagnements', function (Blueprint $table) {
+        Schema::create('accompagnement_bien', function (Blueprint $table) {
             $table->id();
-            $table->string('intitule');
-            $table->text('description');
-            $table->enum('type', Accompagnement::$types);
-            $table->date('datePublication');
+            $table->foreignId('bien_id')->constrained()->onDelete('cascade');
+            $table->foreignId('accompagnement_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accompagnements');
+        Schema::dropIfExists('accompagnement_bien');
     }
-};
+}
