@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccompagnementsTable extends Migration
+class CreateTypeacsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateAccompagnementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('accompagnements', function (Blueprint $table) {
+        Schema::create('typeacs', function (Blueprint $table) {
             $table->id();
-            $table->string('intitule');
-            $table->text('description');
-            $table->foreignId('typeac_id')->constrained('typeacs')->onDelete('cascade');
-            $table->date('datePublication');
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateAccompagnementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accompagnements');
+        Schema::dropIfExists('typeacs');
     }
 }

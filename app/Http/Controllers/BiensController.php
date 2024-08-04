@@ -2,89 +2,74 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bien;
 use Illuminate\Http\Request;
 
 class BiensController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
-        return view('biens.index',[
-            // 'biens' => $biens,
-        ]);
+        $biens = Bien::all();
+        return view('biens.index', compact('biens'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('biens.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-        return view('biens.show',[
-            // 'bien' => $bien,
+        $validatedData = $request->validate([
+            'reference' => 'required|unique:biens',
+            'intitule' => 'required',
+            'description' => 'required',
+            'surface' => 'required|integer',
+            'prix' => 'required|numeric',
+            'type' => 'required',
+            'adresse' => 'required',
+            'datePublication' => 'required|date',
+            'etat' => 'required',
         ]);
+
+        Bien::create($validatedData);
+
+        return redirect()->route('biens.index')->with('success', 'Bien ajouté avec succès');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function show(Bien $bien)
     {
-        //
+        return view('biens.show', compact('bien'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function edit(Bien $bien)
     {
-        //
+        return view('biens.edit', compact('bien'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function update(Request $request, Bien $bien)
     {
-        //
+        $validatedData = $request->validate([
+            'reference' => 'required|unique:biens,reference,' . $bien->id,
+            'intitule' => 'required',
+            'description' => 'required',
+            'surface' => 'required|integer',
+            'prix' => 'required|numeric',
+            'type' => 'required',
+            'adresse' => 'required',
+            'datePublication' => 'required|date',
+            'etat' => 'required',
+        ]);
+
+        $bien->update($validatedData);
+
+        return redirect()->route('biens.index')->with('success', 'Bien mis à jour avec succès');
+    }
+
+    public function destroy(Bien $bien)
+    {
+        $bien->delete();
+
+        return redirect()->route('biens.index')->with('success', 'Bien supprimé avec succès');
     }
 }

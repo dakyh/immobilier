@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BiensController;
+use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\AccompagnementsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +26,10 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/biens', BiensController::class);
+
+
+
+
+Route::resource('biens', BiensController::class);
+Route::resource('images', ImagesController::class);
+Route::resource('accompagnements', AccompagnementsController::class);

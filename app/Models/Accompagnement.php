@@ -12,19 +12,17 @@ class Accompagnement extends Model
     protected $fillable = [
         'intitule',
         'description',
-        'type',
+        'typeac_id',
         'datePublication'
-    ];
-
-    public static $types = [
-        'administratifs',
-        'conciergerie',
-        'crédit bancaire',
-        // Ajoutez d'autres types ici si nécessaire
     ];
 
     public function biens()
     {
         return $this->belongsToMany(Bien::class);
+    }
+
+    public function typeac()
+    {
+        return $this->belongsTo(TypeAC::class);
     }
 }

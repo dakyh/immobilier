@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateBiensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('description');
             $table->integer('surface');
             $table->decimal('prix', 10, 2);
-            $table->enum('type', Bien::$types);
+            $table->foreignId('typebien_id')->constrained('typebiens')->onDelete('cascade');
             $table->string('adresse');
             $table->date('datePublication');
             $table->string('etat');
@@ -32,7 +32,6 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-    
 
     /**
      * Reverse the migrations.
@@ -43,4 +42,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('biens');
     }
-};
+}

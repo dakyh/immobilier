@@ -15,7 +15,7 @@ class Bien extends Model
         'description',
         'surface',
         'prix',
-        'type',
+        'typebien_id',
         'adresse',
         'datePublication',
         'etat',
@@ -26,12 +26,11 @@ class Bien extends Model
         'nombreDAppartements',
     ];
 
-    public static $types = [
-        'terrains',
-        'appartements',
-        'immeubles',
-        // Ajoutez d'autres types ici si nécessaire
-    ];
+    public function typebien()
+    {
+        return $this->belongsTo(TypeBien::class);
+    }
+
 
     public function images()
     {
