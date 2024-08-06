@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accompagnement;
+use App\Models\TypeAC;
 use Illuminate\Http\Request;
 
 class AccompagnementsController extends Controller
@@ -15,7 +16,8 @@ class AccompagnementsController extends Controller
 
     public function create()
     {
-        return view('accompagnements.create');
+        $types = TypeAC::all();
+        return view('accompagnements.create', compact('types'));
     }
 
     public function store(Request $request)
@@ -23,7 +25,7 @@ class AccompagnementsController extends Controller
         $validatedData = $request->validate([
             'intitule' => 'required',
             'description' => 'required',
-            'type' => 'required',
+            'typeac_id' => 'required',
             'datePublication' => 'required|date',
         ]);
 
@@ -39,7 +41,8 @@ class AccompagnementsController extends Controller
 
     public function edit(Accompagnement $accompagnement)
     {
-        return view('accompagnements.edit', compact('accompagnement'));
+        $types = TypeAC::all();
+        return view('accompagnements.edit', compact('accompagnement', 'types'));
     }
 
     public function update(Request $request, Accompagnement $accompagnement)
@@ -47,7 +50,7 @@ class AccompagnementsController extends Controller
         $validatedData = $request->validate([
             'intitule' => 'required',
             'description' => 'required',
-            'type' => 'required',
+            'typeac_id' => 'required',
             'datePublication' => 'required|date',
         ]);
 

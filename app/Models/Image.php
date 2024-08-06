@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,11 +11,11 @@ class Image extends Model
     protected $fillable = [
         'nom',
         'url',
-        'bien_id'
+        'bien_id', // Clé étrangère
     ];
 
     public function bien()
     {
-        return $this->belongsTo(Bien::class);
+        return $this->belongsTo(Bien::class); // Relation N:1 avec Bien
     }
 }
