@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+
 
     <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}" type="image/x-icon">
@@ -15,7 +21,12 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/flaticon/flaticon.css') }}">
 
+    {{-- 
+     --}}
+     <link rel="stylesheet" href="{{ asset('css/biens/style.css') }}">
+     <link rel="stylesheet" type="text/css" id="color-change" href="{{ asset('css/biens/color.css') }}">
     <title>HALBI</title>
 </head>
 
@@ -23,7 +34,7 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">
+            <a href="/" class="nav__logo">
                 Holding Ahmad Loyal Business Invest <i class='bx bxs-home-alt-2'></i>
             </a>
 
@@ -62,7 +73,7 @@
             <!-- Theme change button -->
             <i class='bx bx-moon change-theme' id="theme-button" ></i>
 
-            <a href="#subscribe" class="button nav__button">
+            <a href="login" class="button nav__button">
                 Mon espace
             </a>
         </nav>
@@ -122,22 +133,47 @@
         </section>
 
         <!--==================== LOGOS ====================-->
-        <section class="logos section">
-            <div class="logos__container container grid">
-                <div class="logos__img">
-                    <img src="{{ asset('img/logo1.png') }}" alt="">
+        <div class="full-row bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="text-secondary double-down-line text-center mb-5">Ce Que Nous Faisons</h2></div>
                 </div>
-                <div class="logos__img">
-                    <img src="{{ asset('img/logo2.png') }}" alt="">
-                </div>
-                <div class="logos__img">
-                    <img src="{{ asset('img/logo3.png') }}" alt="">
-                </div>
-                <div class="logos__img">
-                    <img src="{{ asset('img/logo4.png') }}" alt="">
+                <div class="text-box-one">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
+								<i class="flaticon-rent text-primary flat-medium" aria-hidden="true"></i>
+                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a>Service de Vente</a></h5>
+                                <p>Nous vous accompagnons tout au long du processus de vente pour maximiser la valeur de votre propriété.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
+								<i class="flaticon-for-rent text-primary flat-medium" aria-hidden="true"></i>
+                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a >Service de Location</a></h5>
+                                <p> Nous facilitons la location de vos biens, assurant une gestion efficace pour locataires et propriétaires.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
+								<i class="flaticon-list text-primary flat-medium" aria-hidden="true"></i>
+                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a >Annonces Immobilières</a></h5>
+                                <p> Découvrez nos annonces mises à jour régulièrement et trouvez facilement la propriété qui vous correspond.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
+								<i class="flaticon-diagram text-primary flat-medium" aria-hidden="true"></i>
+                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a >Investissement Immobilier</a></h5>
+                                <p>Investissez de manière sécurisée et rentable avec nos conseils d'experts et opportunités exclusives. </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+
 
         <!--==================== POPULAR ====================-->
         <section class="section" id="popular">
@@ -375,6 +411,42 @@
                     
                 </div>
             </section>
+
+            <div class="full-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="text-secondary double-down-line text-center mb-5">Comment Ça Marche</h2>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="icon-thumb-one text-center mb-5">
+                                {{-- <div class="bg-primary text-white rounded-circle position-absolute z-index-9">1</div> --}}
+                                <div class="left-arrow"><i class="flaticon-investor flat-medium icon-primary" aria-hidden="true"></i></div>
+                                <h5 class="text-secondary mt-5 mb-4">Discussion</h5>
+                                <p> Nous débutons par une discussion pour comprendre vos besoins et attentes spécifiques en matière de biens immobiliers.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="icon-thumb-one text-center mb-5">
+                                {{-- <div class="bg-primary text-white rounded-circle position-absolute z-index-9">2</div> --}}
+                                <div class="left-arrow"><i class="flaticon-search flat-medium icon-primary" aria-hidden="true"></i></div>
+                                <h5 class="text-secondary mt-5 mb-4">Révision des Documents</h5>
+                                <p>Nous passons en revue tous les documents nécessaires pour nous assurer que tout est en ordre et conforme aux régulations en vigueur. </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="icon-thumb-one text-center mb-5">
+                                {{-- <div class="bg-primary text-white rounded-circle position-absolute z-index-9">3</div> --}}
+                                <div><i class="flaticon-handshake flat-medium icon-primary" aria-hidden="true"></i></div>
+                                <h5 class="text-secondary mt-5 mb-4">Acquisition</h5>
+                                <p>Une fois les étapes précédentes complétées, nous vous aidons à finaliser l'acquisition de votre bien immobilier en toute sérénité. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!--==================== CONTACT ====================-->
             <section class="contact section" id="contact">
