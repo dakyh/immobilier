@@ -6,6 +6,7 @@ use App\Models\Bien;
 use App\Models\Image;
 use App\Models\TypeBien;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class BiensController extends Controller
@@ -16,7 +17,6 @@ class BiensController extends Controller
         $types = TypeBien::all(); // Récupère tous les types de biens
         return view('biens.index', compact('biens', 'types'));
     }
-
 
     public function create()
     {
@@ -32,7 +32,7 @@ class BiensController extends Controller
             'description' => 'required',
             'surface' => 'required|integer',
             'prix' => 'required|numeric',
-            'typebien_id' => 'required|exists:type_biens,id',
+            'typebien_id' => 'required|exists:typebiens,id', // Changement ici
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',
@@ -53,11 +53,6 @@ class BiensController extends Controller
         return redirect()->route('biens.index')->with('success', 'Bien ajouté avec succès');
     }
 
-    public function show(Bien $bien)
-    {
-        return view('biens.show', compact('bien'));
-    }
-
     public function edit(Bien $bien)
     {
         $types = TypeBien::all();
@@ -72,7 +67,7 @@ class BiensController extends Controller
             'description' => 'required',
             'surface' => 'required|integer',
             'prix' => 'required|numeric',
-            'typebien_id' => 'required|exists:type_biens,id',
+            'typebien_id' => 'required|exists:typebiens,id', // Changement ici
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',
@@ -99,6 +94,11 @@ class BiensController extends Controller
         }
 
         return redirect()->route('biens.index')->with('success', 'Bien mis à jour avec succès');
+    }
+
+    public function show(Bien $bien)
+    {
+        return view('biens.show', compact('bien'));
     }
 
     public function destroy(Bien $bien)

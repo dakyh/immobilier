@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TypeBien extends Model
 {
     use HasFactory;
-
-    protected $table = 'typebiens'; // Nom correct de la table
-
+    protected $table = 'typebiens';  // Indique explicitement le nom de la table
     protected $fillable = ['nom'];
 
     public function biens()

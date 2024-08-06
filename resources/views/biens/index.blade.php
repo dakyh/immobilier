@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-<<<<<<< HEAD
+
 @section('content')
-=======
+
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
 
@@ -73,16 +73,12 @@
     </nav>
 </header>
 
->>>>>>> 8c58eb179b0ac90578ac74bd3bc2038cbd01b2fc
+
 <section class="home section" id="home">
   <div class="home__container container ">
       <div class="">
           <h1 class="home__title">
-<<<<<<< HEAD
-              Découvrez <br> nos différentes propriétés
-=======
-              Découvrez <br> nos différentes propriétées
->>>>>>> 8c58eb179b0ac90578ac74bd3bc2038cbd01b2fc
+
           </h1>
       </div>
   </div>

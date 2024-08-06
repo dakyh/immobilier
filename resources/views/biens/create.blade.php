@@ -25,11 +25,11 @@
             <label for="prix" class="form-label">Prix</label>
             <input type="number" name="prix" class="form-control" required>
         </div>
-        <div class="mb-3">
+        <div class="form-group">
             <label for="typebien_id" class="form-label">Type</label>
             <select name="typebien_id" class="form-select" required>
                 @foreach($types as $type)
-                    <option value="{{ $type->id }}">{{ $type->nom }}</option>
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
                 @endforeach
             </select>
         </div>
