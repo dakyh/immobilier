@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Liste des Accompagnements</h1>
-    <a href="{{ route('accompagnements.create') }}" class="btn btn-primary">Ajouter un Accompagnement</a>
-    <table class="table">
-        <thead>
+<div class="container mt-5">
+    <h1 class="mb-4">Liste des Accompagnements</h1>
+    <a href="{{ route('accompagnements.create') }}" class="btn btn-primary mb-3">Ajouter un Accompagnement</a>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
             <tr>
                 <th>ID</th>
                 <th>Intitulé</th>
@@ -22,14 +22,14 @@
                     <td>{{ $accompagnement->intitule }}</td>
                     <td>{{ $accompagnement->description }}</td>
                     <td>{{ $accompagnement->typeac->nom }}</td>
-                    <td>{{ $accompagnement->datePublication }}</td>
+                    <td>{{ $accompagnement->datePublication->format('d-m-Y') }}</td>
                     <td>
-                        <a href="{{ route('accompagnements.show', $accompagnement->id) }}" class="btn btn-info">Voir</a>
-                        <a href="{{ route('accompagnements.edit', $accompagnement->id) }}" class="btn btn-warning">Modifier</a>
+                        <a href="{{ route('accompagnements.show', $accompagnement->id) }}" class="btn btn-info btn-sm">Voir</a>
+                        <a href="{{ route('accompagnements.edit', $accompagnement->id) }}" class="btn btn-warning btn-sm">Modifier</a>
                         <form action="{{ route('accompagnements.destroy', $accompagnement->id) }}" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
                         </form>
                     </td>
                 </tr>

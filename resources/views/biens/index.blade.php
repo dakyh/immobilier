@@ -5,7 +5,7 @@
   <div class="home__container container ">
       <div class="">
           <h1 class="home__title">
-              Découvrez <br> nos différents propriétés
+              Découvrez <br> nos différentes propriétés
           </h1>
       </div>
   </div>
@@ -22,27 +22,26 @@
                                 <div class="col-md-6">
                                     <div class="featured-thumb hover-zoomer mb-4">
                                         <div class="overlay-black overflow-hidden position-relative">
-                                            <img src="{{ $bien->image ? asset('storage/' . str_replace('storage/', '', $bien->image->url)) : asset('img/home.jpg') }}" alt="pimage">
-                                            <div class="sale bg-secondary text-white">A vendre</div>
-                                            <div class="price text-primary text-capitalize">{{ $bien->surface }} m2</div>
+                                            <img src="{{ $bien->image ? asset('storage/' . $bien->image->url) : asset('img/home.jpg') }}" alt="pimage">
+                                            <div class="sale bg-secondary text-white">À vendre</div>
+                                            <div class="price text-primary text-capitalize">{{ $bien->surface }} m²</div>
                                         </div>
                                         <div class="featured-thumb-data shadow-one">
                                             <div class="p-4">
                                                 <h5 class="text-secondary hover-text-primary mb-2 text-capitalize">
                                                     <a href="#">{{ $bien->intitule }}</a>
-                                            
-                                                <a href="#">{{ $bien->intitule }}</a>
-                                            </h5>
-                                            <span class="location text-capitalize">
-                                                <i class="fas fa-map-marker-alt text-primary"></i>{{ $bien->adresse }}
-                                            </span>
-                                        </div>
-                                        <div class="px-4 pb-4 d-inline-block w-100">
-                                            <div class="float-left text-capitalize">
-                                                <i class="fa-solid fa-house text-primary mr-1"></i> type : {{ $bien->typebien->name }}
+                                                </h5>
+                                                <span class="location text-capitalize">
+                                                    <i class="fas fa-map-marker-alt text-primary"></i>{{ $bien->adresse }}
+                                                </span>
                                             </div>
-                                            <div class="float-right">
-                                                <i class="far fa-calendar-alt text-primary mr-1"></i> {{ $bien->datePublication->format('d-m-Y') }}
+                                            <div class="px-4 pb-4 d-inline-block w-100">
+                                                <div class="float-left text-capitalize">
+                                                    <i class="fa-solid fa-house text-primary mr-1"></i> Type : {{ $bien->typebien->nom }}
+                                                </div>
+                                                <div class="float-right">
+                                                    <i class="far fa-calendar-alt text-primary mr-1"></i> {{ $bien->datePublication->format('d-m-Y') }}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +62,7 @@
                                     <select class="form-control" name="types" id="">
                                         <option value="all">Tous</option>
                                         @foreach($types as $type)
-                                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                                            <option value="{{ $type->id }}">{{ $type->nom }}</option>
                                         @endforeach
                                     </select>
                                 </div>
