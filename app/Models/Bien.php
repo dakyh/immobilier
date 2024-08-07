@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Bien extends Model
 {
     use HasFactory;
+    protected $casts = [
+        'datePublication' => 'date',
+    ];
+    
 
     protected $fillable = [
         'reference',

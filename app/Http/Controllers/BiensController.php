@@ -32,7 +32,7 @@ class BiensController extends Controller
             'description' => 'required',
             'surface' => 'required|integer',
             'prix' => 'required|numeric',
-            'typebien_id' => 'required|exists:typebiens,id', // Changement ici
+            'type' => 'required|exists:typebiens,id', // Modifié ici
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',
@@ -67,7 +67,7 @@ class BiensController extends Controller
             'description' => 'required',
             'surface' => 'required|integer',
             'prix' => 'required|numeric',
-            'typebien_id' => 'required|exists:typebiens,id', // Changement ici
+            'type' => 'required|exists:typebiens,id', // Modifié ici
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',

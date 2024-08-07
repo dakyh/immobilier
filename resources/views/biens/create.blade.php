@@ -26,8 +26,8 @@
             <input type="number" name="prix" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="typebien_id" class="form-label">Type</label>
-            <select name="typebien_id" class="form-select" required>
+            <label for="type" class="form-label">Type</label>
+            <select name="type" class="form-select" required>
                 @foreach($types as $type)
                     <option value="{{ $type->id }}">{{ $type->name }}</option>
                 @endforeach
