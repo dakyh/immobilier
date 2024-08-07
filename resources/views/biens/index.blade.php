@@ -22,7 +22,23 @@
                                 <div class="col-md-6">
                                     <div class="featured-thumb hover-zoomer mb-4">
                                         <div class="overlay-black overflow-hidden position-relative">
-                                            <img src="{{ asset($bien->image->url) }}" class="card-img-top fixed-size" alt="{{ $bien->intitule }}">
+                                            <div id="carousel-{{ $bien->id }}" class="carousel slide" data-bs-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    @foreach($bien->images as $image)
+                                                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                                            <img src="{{ asset($image->url) }}" class="card-img-top fixed-size" alt="{{ $bien->intitule }}">
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ $bien->id }}" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ $bien->id }}" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
                                             <div class="sale bg-secondary text-white">À vendre</div>
                                             <div class="price text-primary text-capitalize">{{ $bien->surface }} m²</div>
                                         </div>
@@ -84,4 +100,8 @@
         object-fit: cover;
     }
 </style>
+
+<!-- Include Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 @endsection

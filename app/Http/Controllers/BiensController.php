@@ -32,7 +32,7 @@ class BiensController extends Controller
             'description' => 'required',
             'surface' => 'required|integer',
             'prix' => 'required|numeric',
-            'type' => 'required|exists:typebiens,id', // Modifié ici
+            'type' => 'required|exists:typebiens,id',
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',
@@ -41,19 +41,23 @@ class BiensController extends Controller
             'nombreDeSallesDeBain' => 'nullable|integer',
             'cloture' => 'nullable|boolean',
             'nombreDAppartements' => 'nullable|integer',
-            'file' => 'required|image',
+            'files.*' => 'required|image', // Change to files.* for multiple images
         ]);
 
         $bien = Bien::create($validatedData);
 
-        $path = $request->file('file')->store('images', 'public');
-        $url = Storage::url($path);
+        if ($request->hasFile('files')) {
+            foreach ($request->file('files') as $file) {
+                $path = $file->store('images', 'public');
+                $url = Storage::url($path);
 
-        Image::create([
-            'nom' => $request->input('intitule'),
-            'url' => $url,
-            'bien_id' => $bien->id,
-        ]);
+                Image::create([
+                    'nom' => $request->input('intitule'),
+                    'url' => $url,
+                    'bien_id' => $bien->id,
+                ]);
+            }
+        }
 
         return redirect()->route('biens.index')->with('success', 'Bien ajouté avec succès');
     }
@@ -72,7 +76,7 @@ class BiensController extends Controller
             'description' => 'required',
             'surface' => 'required|integer',
             'prix' => 'required|numeric',
-            'type' => 'required|exists:typebiens,id', // Modifié ici
+            'type' => 'required|exists:typebiens,id',
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',
@@ -81,26 +85,28 @@ class BiensController extends Controller
             'nombreDeSallesDeBain' => 'nullable|integer',
             'cloture' => 'nullable|boolean',
             'nombreDAppartements' => 'nullable|integer',
-            'file' => 'nullable|image',
+            'files.*' => 'nullable|image', // Change to files.* for multiple images
         ]);
 
         $bien->update($validatedData);
 
-        if ($request->hasFile('file')) {
-            // Supprimer l'ancienne image
-            if ($bien->image) {
-                Storage::delete('public/' . str_replace('/storage/', '', $bien->image->url));
-                $bien->image->delete();
+        if ($request->hasFile('files')) {
+            // Supprimer les anciennes images
+            foreach ($bien->images as $image) {
+                Storage::delete('public/' . str_replace('/storage/', '', $image->url));
+                $image->delete();
             }
 
-            $path = $request->file('file')->store('images', 'public');
-            $url = Storage::url($path);
+            foreach ($request->file('files') as $file) {
+                $path = $file->store('images', 'public');
+                $url = Storage::url($path);
 
-            Image::create([
-                'nom' => $request->input('intitule'),
-                'url' => $url,
-                'bien_id' => $bien->id,
-            ]);
+                Image::create([
+                    'nom' => $request->input('intitule'),
+                    'url' => $url,
+                    'bien_id' => $bien->id,
+                ]);
+            }
         }
 
         return redirect()->route('biens.index')->with('success', 'Bien mis à jour avec succès');
@@ -113,10 +119,10 @@ class BiensController extends Controller
 
     public function destroy(Bien $bien)
     {
-        // Supprimer l'image associée
-        if ($bien->image) {
-            Storage::delete('public/' . str_replace('/storage/', '', $bien->image->url));
-            $bien->image->delete();
+        // Supprimer les images associées
+        foreach ($bien->images as $image) {
+            Storage::delete('public/' . str_replace('/storage/', '', $image->url));
+            $image->delete();
         }
 
         $bien->delete();

@@ -66,8 +66,8 @@
             <input type="number" name="nombreDAppartements" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="file" class="form-label">Image</label>
-            <input type="file" name="file" class="form-control" required>
+            <label for="files" class="form-label">Images</label>
+            <input type="file" name="files[]" class="form-control" multiple required>
         </div>
         <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>
