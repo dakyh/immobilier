@@ -36,6 +36,11 @@ class BiensController extends Controller
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',
+            'nombreDePieces' => 'nullable|integer',
+            'nombreDeChambres' => 'nullable|integer',
+            'nombreDeSallesDeBain' => 'nullable|integer',
+            'cloture' => 'nullable|boolean',
+            'nombreDAppartements' => 'nullable|integer',
             'file' => 'required|image',
         ]);
 
@@ -71,6 +76,11 @@ class BiensController extends Controller
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',
+            'nombreDePieces' => 'nullable|integer',
+            'nombreDeChambres' => 'nullable|integer',
+            'nombreDeSallesDeBain' => 'nullable|integer',
+            'cloture' => 'nullable|boolean',
+            'nombreDAppartements' => 'nullable|integer',
             'file' => 'nullable|image',
         ]);
 

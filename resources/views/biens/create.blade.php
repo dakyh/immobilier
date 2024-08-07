@@ -29,7 +29,7 @@
             <label for="type" class="form-label">Type</label>
             <select name="type" class="form-select" required>
                 @foreach($types as $type)
-                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    <option value="{{ $type->id }}">{{ $type->nom }}</option>
                 @endforeach
             </select>
         </div>
@@ -44,6 +44,26 @@
         <div class="mb-3">
             <label for="etat" class="form-label">État</label>
             <input type="text" name="etat" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="nombreDePieces" class="form-label">Nombre de Pièces</label>
+            <input type="number" name="nombreDePieces" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="nombreDeChambres" class="form-label">Nombre de Chambres</label>
+            <input type="number" name="nombreDeChambres" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="nombreDeSallesDeBain" class="form-label">Nombre de Salles de Bain</label>
+            <input type="number" name="nombreDeSallesDeBain" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="cloture" class="form-label">Clôture</label>
+            <input type="checkbox" name="cloture" class="form-check-input">
+        </div>
+        <div class="mb-3">
+            <label for="nombreDAppartements" class="form-label">Nombre d'Appartements</label>
+            <input type="number" name="nombreDAppartements" class="form-control">
         </div>
         <div class="mb-3">
             <label for="file" class="form-label">Image</label>
