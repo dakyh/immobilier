@@ -5,7 +5,7 @@
   <div class="home__container container ">
       <div class="">
           <h1 class="home__title">
-              Découvrez <br> nos différents propriétés
+              Découvrez <br> nos différentes propriétés
           </h1>
       </div>
   </div>
@@ -22,7 +22,7 @@
                                 <div class="col-md-6">
                                     <div class="featured-thumb hover-zoomer mb-4">
                                         <div class="overlay-black overflow-hidden position-relative">
-                                            <img src="{{ $bien->image ? asset('storage/' . $bien->image->url) : asset('img/home.jpg') }}" alt="pimage">
+                                            <img src="{{ asset($bien->image->url) }}" class="card-img-top fixed-size" alt="{{ $bien->intitule }}">
                                             <div class="sale bg-secondary text-white">À vendre</div>
                                             <div class="price text-primary text-capitalize">{{ $bien->surface }} m²</div>
                                         </div>
@@ -40,7 +40,7 @@
                                                     <i class="fa-solid fa-house text-primary mr-1"></i> Type : {{ $bien->typebien ? $bien->typebien->nom : 'N/A' }}
                                                 </div>
                                                 <div class="float-right">
-                                                    <i class="far fa-calendar-alt text-primary mr-1"></i> {{ $bien->datePublication->format('d-m-Y') }}
+                                                    <i class="far fa-calendar-alt text-primary mr-1"></i> {{ \Carbon\Carbon::parse($bien->datePublication)->format('d-m-Y') }}
                                                 </div>
                                             </div>
                                         </div>
@@ -76,4 +76,12 @@
         </div>
     </div>
 </div>
+
+<style>
+    .fixed-size {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+</style>
 @endsection
