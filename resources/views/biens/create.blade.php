@@ -29,7 +29,7 @@
             <label for="type" class="form-label">Type</label>
             <select name="type" class="form-select" required>
                 @foreach($types as $type)
-                    <option value="{{ $type->id }}">{{ $type->nom }}</option>
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
                 @endforeach
             </select>
         </div>

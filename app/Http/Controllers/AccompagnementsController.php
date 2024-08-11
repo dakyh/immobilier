@@ -25,7 +25,7 @@ class AccompagnementsController extends Controller
         $validatedData = $request->validate([
             'intitule' => 'required',
             'description' => 'required',
-            'typeac_id' => 'required',
+            'type' => 'required',
             'datePublication' => 'required|date',
         ]);
 
@@ -50,7 +50,7 @@ class AccompagnementsController extends Controller
         $validatedData = $request->validate([
             'intitule' => 'required',
             'description' => 'required',
-            'typeac_id' => 'required',
+            'type' => 'required',
             'datePublication' => 'required|date',
         ]);
 

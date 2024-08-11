@@ -2,13 +2,13 @@
 
 @section('content')
 <section class="home section" id="home">
-  <div class="home__container container ">
-      <div class="">
-          <h1 class="home__title">
-              Découvrez <br> nos différentes propriétés
-          </h1>
-      </div>
-  </div>
+    <div class="home__container container ">
+        <div class="">
+            <h1 class="home__title">
+                Découvrez <br> nos différentes propriétés
+            </h1>
+        </div>
+    </div>
 </section>
 
 <div style="margin-top: 30px" id="page-wrapper">
@@ -53,7 +53,7 @@
                                             </div>
                                             <div class="px-4 pb-4 d-inline-block w-100">
                                                 <div class="float-left text-capitalize">
-                                                    <i class="fa-solid fa-house text-primary mr-1"></i> Type : {{ $bien->typebien ? $bien->typebien->nom : 'N/A' }}
+                                                    <i class="fa-solid fa-house text-primary mr-1"></i> Type : {{ $bien->type }}
                                                 </div>
                                                 <div class="float-right">
                                                     <i class="far fa-calendar-alt text-primary mr-1"></i> {{ \Carbon\Carbon::parse($bien->datePublication)->format('d-m-Y') }}
@@ -76,9 +76,11 @@
                                         <div class="input-group-text"><i class="fas fa-search"></i></div>
                                     </div>
                                     <select class="form-control" name="types" id="">
-                                        <option value="all">Tous</option>
+                                        <option value="all" {{ $selectedType == 'all' ? 'selected' : '' }}>Tous</option>
                                         @foreach($types as $type)
-                                            <option value="{{ $type->id }}">{{ $type->nom }}</option>
+                                            <option value="{{ $type->type }}" {{ $selectedType == $type->type ? 'selected' : '' }}>
+                                                {{ $type->type }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>

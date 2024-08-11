@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Accompagnement extends Model
 {
     use HasFactory;
-
+    protected $casts = [
+        'datePublication' => 'date',
+    ];
+    
     protected $fillable = [
         'intitule',
         'description',
-        'typeac_id',
+        'type',
         'datePublication'
     ];
 

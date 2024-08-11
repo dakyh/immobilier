@@ -11,12 +11,22 @@ use Illuminate\Support\Facades\Storage;
 
 class BiensController extends Controller
 {
-    public function index()
+        public function index(Request $request)
     {
-        $biens = Bien::all();
-        $types = TypeBien::all(); // Récupère tous les types de biens
-        return view('biens.index', compact('biens', 'types'));
+        $selectedType = $request->input('types', 'all');
+
+        // Filter biens based on the selected type
+        $biens = Bien::when($selectedType != 'all', function ($query) use ($selectedType) {
+            $query->where('type', $selectedType);
+        })->get();
+
+        // No need to fetch types from another table
+        $types = Bien::select('type')->distinct()->get();
+
+        return view('biens.index', compact('biens', 'types', 'selectedType'));
     }
+
+    
 
     public function create()
     {

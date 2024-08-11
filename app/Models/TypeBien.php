@@ -9,7 +9,7 @@ class TypeBien extends Model
 {
     use HasFactory;
     protected $table = 'typebiens';  // Indique explicitement le nom de la table
-    protected $fillable = ['nom'];
+    protected $fillable = ['name'];
 
     public function biens()
     {

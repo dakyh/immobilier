@@ -15,9 +15,9 @@ class TypeBiensTableSeeder extends Seeder
     public function run()
     {
         DB::table('typebiens')->insert([
-            ['name' => 'Appartement'],
-            ['name' => 'Maison'],
-            ['name' => 'Terrain'],
+            ['name' => 'immeubles'],
+            ['name' => 'immeubles'],
+            ['name' => 'terrains'],
             // Ajoutez d'autres types de biens si nécessaire
         ]);
     }

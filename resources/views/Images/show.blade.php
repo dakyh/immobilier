@@ -9,7 +9,7 @@
         </div>
         <div class="card-body">
             <p><strong>Nom:</strong> {{ $image->nom }}</p>
-            <p><strong>URL:</strong> <a href="{{ asset('storage/' . $image->url) }}" target="_blank">Voir l'image</a></p>
+            <p><strong>URL:</strong> <a href="{{ asset($image->url) }}" target="_blank">Voir l'image</a></p>  <!-- Corrected here -->
             <p><strong>Bien:</strong> {{ $image->bien->intitule }}</p>
             <a href="{{ route('images.edit', $image->id) }}" class="btn btn-warning">Modifier</a>
             <form action="{{ route('images.destroy', $image->id) }}" method="POST" style="display:inline-block;">

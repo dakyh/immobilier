@@ -21,7 +21,7 @@
                     <td>{{ $accompagnement->id }}</td>
                     <td>{{ $accompagnement->intitule }}</td>
                     <td>{{ $accompagnement->description }}</td>
-                    <td>{{ $accompagnement->typeac->nom }}</td>
+                    <td>{{ $accompagnement->type }}</td>
                     <td>{{ $accompagnement->datePublication->format('d-m-Y') }}</td>
                     <td>
                         <a href="{{ route('accompagnements.show', $accompagnement->id) }}" class="btn btn-info btn-sm">Voir</a>
