@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container mt-5">
+    <br>
+    <br>
     <h1 class="mb-4">Ajouter un Bien</h1>
     <form action="{{ route('biens.store') }}" method="POST" enctype="multipart/form-data">
         @csrf

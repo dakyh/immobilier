@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BiensController;
 use App\Http\Controllers\ImagesController;
+use App\Http\Controllers\TypeACController;
+use App\Http\Controllers\TypeBienController;
 use App\Http\Controllers\AccompagnementsController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +30,12 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('biens/gestion', [BiensController::class, 'gestion'])->name('biens.gestion');
 
-
-
-
-Route::resource('biens', BiensController::class);
-Route::resource('images', ImagesController::class);
-Route::resource('accompagnements', AccompagnementsController::class);
+Route::middleware(['auth'])->group(function () {
+    Route::get('biens/gestion', [BiensController::class, 'gestion'])->name('biens.gestion');
+    Route::resource('typebiens', TypeBienController::class);
+    Route::resource('biens', BiensController::class);
+    Route::resource('images', ImagesController::class);
+    Route::resource('accompagnements', AccompagnementsController::class);
+    Route::resource('typeacs', TypeACController::class);
+});

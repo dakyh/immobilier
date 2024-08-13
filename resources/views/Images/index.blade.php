@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+    <br>
+    <br>
+    <br>
     <h1>Liste des Images</h1>
     <a href="{{ route('images.create') }}" class="btn btn-primary">Ajouter une Image</a>
     <table class="table">

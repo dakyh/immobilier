@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container mt-5">
+    <br>
+    <br>
     <h1 class="mb-4">Détails de l'Accompagnement</h1>
     <div class="card">
         <div class="card-header bg-primary text-white">

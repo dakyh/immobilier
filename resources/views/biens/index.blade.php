@@ -2,6 +2,8 @@
 
 @section('content')
 <section class="home section" id="home">
+    <br>
+    <br>
     <div class="home__container container ">
         <div class="">
             <h1 class="home__title">
