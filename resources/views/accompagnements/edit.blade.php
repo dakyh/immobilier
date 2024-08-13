@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container mt-5">
+    <br>
+    <br>
     <h1 class="mb-4">Modifier un Accompagnement</h1>
     <form action="{{ route('accompagnements.update', $accompagnement->id) }}" method="POST">
         @csrf

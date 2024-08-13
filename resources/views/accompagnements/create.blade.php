@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container mt-5">
+    <br>
+    <br>
     <h1 class="mb-4">Ajouter un Accompagnement</h1>
     <form action="{{ route('accompagnements.store') }}" method="POST">
         @csrf

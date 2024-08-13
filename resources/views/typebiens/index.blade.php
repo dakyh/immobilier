@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+   <br>
+   <br>
+   <br>
     <h1 class="mb-4">Liste des Types de Biens</h1>
     <a href="{{ route('typebiens.create') }}" class="btn btn-primary mb-4">Ajouter un Type de Bien</a>
 

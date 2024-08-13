@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container mt-5">
+    <br>
+    <br>
     <h1 class="mb-4">Liste des Accompagnements</h1>
     <a href="{{ route('accompagnements.create') }}" class="btn btn-primary mb-3">Ajouter un Accompagnement</a>
     <table class="table table-bordered table-striped">

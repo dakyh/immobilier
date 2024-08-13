@@ -30,9 +30,8 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('biens/gestion', [BiensController::class, 'gestion'])->name('biens.gestion');
-
-
 Route::resource('typebiens', TypeBienController::class);
 Route::resource('biens', BiensController::class);
 Route::resource('images', ImagesController::class);

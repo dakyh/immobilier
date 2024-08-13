@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container mt-5">
+    <br>
+    <br>
     <h1 class="mb-4">Modifier un Bien</h1>
     <form action="{{ route('biens.update', $bien->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
