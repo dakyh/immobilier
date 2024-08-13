@@ -34,6 +34,17 @@ class BiensController extends Controller
         return view('biens.create', compact('types'));
     }
 
+    public function gestion(Request $request)
+    {
+        $search = $request->input('search');
+        
+        $biens = Bien::when($search, function ($query, $search) {
+            return $query->where('reference', 'like', '%' . $search . '%');
+        })->get();
+    
+        return view('biens.gestion', compact('biens'));
+    }
+    
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -122,10 +133,13 @@ class BiensController extends Controller
         return redirect()->route('biens.index')->with('success', 'Bien mis à jour avec succès');
     }
 
-    public function show(Bien $bien)
+        public function show($id)
     {
+        $bien = Bien::with('images')->findOrFail($id);
         return view('biens.show', compact('bien'));
     }
+
+
 
     public function destroy(Bien $bien)
     {

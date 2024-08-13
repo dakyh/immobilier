@@ -1260,3 +1260,33 @@ justify-content: center;
     zoom: 2;
   }
 }
+
+/* Appliquez les variables CSS pour le contenu */
+.container, 
+.card, 
+.table, 
+.form-control, 
+.btn, 
+h1, 
+h2, 
+h3, 
+p, 
+a {
+    background-color: var(--container-color);
+    color: var(--text-color);
+}
+
+/* Mode sombre */
+body.dark-theme .container,
+body.dark-theme .card,
+body.dark-theme .table,
+body.dark-theme .form-control,
+body.dark-theme .btn,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme a {
+    background-color: var(--container-color);
+    color: var(--text-color);
+}
