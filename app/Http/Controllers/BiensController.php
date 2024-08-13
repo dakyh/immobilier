@@ -64,6 +64,8 @@ class BiensController extends Controller
             'nombreDAppartements' => 'nullable|integer',
             'files.*' => 'required|image', // Change to files.* for multiple images
         ]);
+        // dd($validatedData);
+
 
         $bien = Bien::create($validatedData);
 
@@ -108,7 +110,7 @@ class BiensController extends Controller
             'nombreDAppartements' => 'nullable|integer',
             'files.*' => 'nullable|image', // Change to files.* for multiple images
         ]);
-
+        // dd($validatedData);
         $bien->update($validatedData);
 
         if ($request->hasFile('files')) {

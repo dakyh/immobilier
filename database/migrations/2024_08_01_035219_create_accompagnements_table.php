@@ -17,7 +17,7 @@ class CreateAccompagnementsTable extends Migration
             $table->id();
             $table->string('intitule');
             $table->text('description');
-            $table->foreignId('typeac_id')->constrained('typeacs')->onDelete('cascade');
+            $table->foreignId('type')->constrained('typeacs')->onDelete('cascade');
             $table->date('datePublication');
             $table->timestamps();
         });

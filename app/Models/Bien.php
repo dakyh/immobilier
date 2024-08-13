@@ -19,7 +19,7 @@ class Bien extends Model
         'description',
         'surface',
         'prix',
-        'typebien_id',
+        'type',
         'adresse',
         'datePublication',
         'etat',
