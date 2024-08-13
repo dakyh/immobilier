@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container">
+    <br>
+    <br>
     <h1 class="mb-4">Liste des Types d'Accompagnements</h1>
     <a href="{{ route('typeacs.create') }}" class="btn btn-primary mb-4">Ajouter un Type d'Accompagnement</a>
 

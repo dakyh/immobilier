@@ -2,6 +2,8 @@
 
 @section('content')
 <div class="container mt-5">
+    <br>
+    <br>
     <h1 class="mb-4">{{ isset($typeac) ? 'Modifier' : 'Ajouter' }} un Type d'Accompagnement</h1>
 
     <form action="{{ isset($typeac) ? route('typeacs.update', $typeac->id) : route('typeacs.store') }}" method="POST">
