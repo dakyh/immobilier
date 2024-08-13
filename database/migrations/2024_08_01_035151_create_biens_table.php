@@ -20,7 +20,7 @@ class CreateBiensTable extends Migration
             $table->text('description');
             $table->integer('surface');
             $table->decimal('prix', 10, 2);
-            $table->foreignId('typebien_id')->constrained('typebiens')->onDelete('cascade');
+            $table->foreignId('type')->constrained('typebiens')->onDelete('cascade');
             $table->string('adresse');
             $table->date('datePublication');
             $table->string('etat');
