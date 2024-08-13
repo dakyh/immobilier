@@ -21,45 +21,47 @@
                             @foreach($biens as $bien)
                                 <div class="col-md-6">
                                     <div class="featured-thumb hover-zoomer mb-4">
-                                        <div class="overlay-black overflow-hidden position-relative">
-                                            <div id="carousel-{{ $bien->id }}" class="carousel slide" data-bs-ride="carousel">
-                                                <div class="carousel-inner">
-                                                    @foreach($bien->images as $image)
-                                                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                                            <img src="{{ asset($image->url) }}" class="card-img-top fixed-size" alt="{{ $bien->intitule }}">
-                                                        </div>
-                                                    @endforeach
+                                        <a href="{{ route('biens.show', $bien->id) }}">
+                                            <div class="overlay-black overflow-hidden position-relative">
+                                                <div id="carousel-{{ $bien->id }}" class="carousel slide" data-bs-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        @foreach($bien->images as $image)
+                                                            <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                                                                <img src="{{ asset($image->url) }}" class="card-img-top fixed-size" alt="{{ $bien->intitule }}">
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ $bien->id }}" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ $bien->id }}" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                    </button>
                                                 </div>
-                                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ $bien->id }}" data-bs-slide="prev">
-                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Previous</span>
-                                                </button>
-                                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ $bien->id }}" data-bs-slide="next">
-                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                    <span class="visually-hidden">Next</span>
-                                                </button>
+                                                <div class="sale bg-secondary text-white">À vendre</div>
+                                                <div class="price text-primary text-capitalize">{{ $bien->surface }} m²</div>
                                             </div>
-                                            <div class="sale bg-secondary text-white">À vendre</div>
-                                            <div class="price text-primary text-capitalize">{{ $bien->surface }} m²</div>
-                                        </div>
-                                        <div class="featured-thumb-data shadow-one">
-                                            <div class="p-4">
-                                                <h5 class="text-secondary hover-text-primary mb-2 text-capitalize">
-                                                    <a href="#">{{ $bien->intitule }}</a>
-                                                </h5>
-                                                <span class="location text-capitalize">
-                                                    <i class="fas fa-map-marker-alt text-primary"></i>{{ $bien->adresse }}
-                                                </span>
-                                            </div>
-                                            <div class="px-4 pb-4 d-inline-block w-100">
-                                                <div class="float-left text-capitalize">
-                                                    <i class="fa-solid fa-house text-primary mr-1"></i> Type : {{ $bien->type }}
+                                            <div class="featured-thumb-data shadow-one">
+                                                <div class="p-4">
+                                                    <h5 class="text-secondary hover-text-primary mb-2 text-capitalize">
+                                                        {{ $bien->intitule }}
+                                                    </h5>
+                                                    <span class="location text-capitalize">
+                                                        <i class="fas fa-map-marker-alt text-primary"></i>{{ $bien->adresse }}
+                                                    </span>
                                                 </div>
-                                                <div class="float-right">
-                                                    <i class="far fa-calendar-alt text-primary mr-1"></i> {{ \Carbon\Carbon::parse($bien->datePublication)->format('d-m-Y') }}
+                                                <div class="px-4 pb-4 d-inline-block w-100">
+                                                    <div class="float-left text-capitalize">
+                                                        <i class="fa-solid fa-house text-primary mr-1"></i> Type : {{ $bien->type }}
+                                                    </div>
+                                                    <div class="float-right">
+                                                        <i class="far fa-calendar-alt text-primary mr-1"></i> {{ \Carbon\Carbon::parse($bien->datePublication)->format('d-m-Y') }}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             @endforeach
