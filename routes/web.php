@@ -6,6 +6,7 @@ use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\TypeACController;
 use App\Http\Controllers\TypeBienController;
 use App\Http\Controllers\AccompagnementsController;
+use App\Http\Controllers\WelcomeController;
 
 
 
@@ -20,9 +21,12 @@ use App\Http\Controllers\AccompagnementsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
+Route::get('/', [WelcomeController::class, 'index']);
+
 
 // Auth::routes();
 Auth::routes([

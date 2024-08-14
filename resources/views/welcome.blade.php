@@ -3,12 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
-
 
     <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}" type="image/x-icon">
@@ -21,12 +15,7 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/flaticon/flaticon.css') }}">
 
-    {{-- 
-     --}}
-     <link rel="stylesheet" href="{{ asset('css/biens/style.css') }}">
-     <link rel="stylesheet" type="text/css" id="color-change" href="{{ asset('css/biens/color.css') }}">
     <title>HALBI</title>
 </head>
 
@@ -34,7 +23,7 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="/" class="nav__logo">
+            <a href="#" class="nav__logo">
                 Holding Ahmad Loyal Business Invest <i class='bx bxs-home-alt-2'></i>
             </a>
 
@@ -73,7 +62,7 @@
             <!-- Theme change button -->
             <i class='bx bx-moon change-theme' id="theme-button" ></i>
 
-            <a href="login" class="button nav__button">
+            <a href="{{ route('login') }}" class="button nav__button">
                 Mon espace
             </a>
         </nav>
@@ -133,174 +122,76 @@
         </section>
 
         <!--==================== LOGOS ====================-->
-        <div class="full-row bg-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="text-secondary double-down-line text-center mb-5">Ce Que Nous Faisons</h2></div>
+        <section class="logos section">
+            <div class="logos__container container grid">
+                <div class="logos__img">
+                    <img src="{{ asset('img/logo1.png') }}" alt="">
                 </div>
-                <div class="text-box-one">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
-								<i class="flaticon-rent text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a>Service de Vente</a></h5>
-                                <p>Nous vous accompagnons tout au long du processus de vente pour maximiser la valeur de votre propriété.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
-								<i class="flaticon-for-rent text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a >Service de Location</a></h5>
-                                <p> Nous facilitons la location de vos biens, assurant une gestion efficace pour locataires et propriétaires.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
-								<i class="flaticon-list text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a >Annonces Immobilières</a></h5>
-                                <p> Découvrez nos annonces mises à jour régulièrement et trouvez facilement la propriété qui vous correspond.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s"> 
-								<i class="flaticon-diagram text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a >Investissement Immobilier</a></h5>
-                                <p>Investissez de manière sécurisée et rentable avec nos conseils d'experts et opportunités exclusives. </p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="logos__img">
+                    <img src="{{ asset('img/logo2.png') }}" alt="">
+                </div>
+                <div class="logos__img">
+                    <img src="{{ asset('img/logo3.png') }}" alt="">
+                </div>
+                <div class="logos__img">
+                    <img src="{{ asset('img/logo4.png') }}" alt="">
                 </div>
             </div>
-        </div>
-
+        </section>
 
         <!--==================== POPULAR ====================-->
         <section class="section" id="popular">
             <div class="container">
                 <span class="section__subtitle">Meilleur choix</span>
                 <h2 class="section__title">
-                    Résidences Populaire<span>.</span>
+                    Résidences Populaires<span>.</span>
                 </h2>
                 <div class="popular__container swiper">
                     <div class="swiper-wrapper">
-                        <!--==================== POPULAR 1 ====================-->
-                        <article class="popular__card swiper-slide">
-                            <img src="{{ asset('img/res_popular1.jpg') }}" alt="" class="popular__img">
-
-                            <div class="popular__data">
-                                <h2 class="popular__price">
-                                    2 770 000 <span>€</span>
-                                </h2>
-                                <h3 class="popular__title">
-                                    Dal Assate [Ref. #9876]
-                                </h3>
-                                <p class="popular__description">
-                                    France  <i class='bx bxs-map'></i> <br>
-                                    Nous contacter  pour l'adresse exacte
-                                </p>
-                            </div>
-                        </article>
-                        <!--==================== POPULAR 2 ====================-->
-                        <article class="popular__card swiper-slide">
-                            <img src="{{ asset('img/res_popular2.jpg') }}" alt="" class="popular__img">
-
-                            <div class="popular__data">
-                                <h2 class="popular__price">
-                                    530 000 <span>€</span>
-                                </h2>
-                                <h3 class="popular__title">
-                                    Amada Liz [Ref. #9901]
-                                </h3>
-                                <p class="popular__description">
-                                    France  <i class='bx bxs-map'></i> <br>
-                                    Nous contacter  pour l'adresse exacte
-                                </p>
-                            </div>
-                        </article>
-                        <!--==================== POPULAR 3 ====================-->
-                        <article class="popular__card swiper-slide">
-                            <img src="{{ asset('img/res_popular3.jpg') }}" alt="" class="popular__img">
-
-                            <div class="popular__data">
-                                <h2 class="popular__price">
-                                    4 400 000 <span>€</span>
-                                </h2>
-                                <h3 class="popular__title">
-                                    Volt Demeur [Ref. #7577]
-                                </h3>
-                                <p class="popular__description">
-                                    France  <i class='bx bxs-map'></i> <br>
-                                    Nous contacter  pour l'adresse exacte
-                                </p>
-                            </div>
-                        </article>
-                        <!--==================== POPULAR 4 ====================-->
-                        <article class="popular__card swiper-slide">
-                            <img src="{{ asset('img/res_popular4.jpg') }}" alt="" class="popular__img">
-
-                            <div class="popular__data">
-                                <h2 class="popular__price">
-                                    1 162 000 <span>€</span>
-                                </h2>
-                                <h3 class="popular__title">
-                                    Orchard City [Ref. #7321]
-                                </h3>
-                                <p class="popular__description">
-                                    France  <i class='bx bxs-map'></i> <br>
-                                    Nous contacter  pour l'adresse exacte
-                                </p>
-                            </div>
-                        </article>
-                        <!--==================== POPULAR 5 ====================-->
-                        <article class="popular__card swiper-slide">
-                            <img src="{{ asset('img/res_popular5.jpg') }}" alt="" class="popular__img">
-
-                            <div class="popular__data">
-                                <h2 class="popular__price">
-                                    3 900 000 <span>€</span>
-                                </h2>
-                                <h3 class="popular__title">
-                                    Aliva Sea [Ref. #5431]
-                                </h3>
-                                <p class="popular__description">
-                                    France  <i class='bx bxs-map'></i> <br>
-                                    Nous contacter  pour l'adresse exacte
-                                </p>
-                            </div>
-                        </article>
-                        <!--==================== POPULAR 6 ====================-->
-                        <article class="popular__card swiper-slide">
-                            <img src="{{ asset('img/res_popular6.jpeg') }}" alt="" class="popular__img">
-
-                            <div class="popular__data">
-                                <h2 class="popular__price">
-                                    850 000 <span>€</span>
-                                </h2>
-                                <h3 class="popular__title">
-                                    Claire Garden [Ref. #5431]
-                                </h3>
-                                <p class="popular__description">
-                                    France  <i class='bx bxs-map'></i> <br>
-                                    Nous contacter  pour l'adresse exacte
-                                </p>
-                            </div>
-                        </article>
+                        @foreach($biens as $bien)
+                            <article class="popular__card swiper-slide">
+                                <div id="carousel-{{ $bien->id }}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        @if($bien->images->isNotEmpty())
+                                            <div class="carousel-item active">
+                                                <img src="{{ asset($bien->images->first()->url) }}" class="card-img-top fixed-size" alt="{{ $bien->intitule }}">
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <!-- Carousel controls omitted since there will be only one image -->
+                                </div>
+                                
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        {{ number_format($bien->prix, 0, ',', ' ') }} <span>€</span>
+                                    </h2>
+                                    <h3 class="popular__title">
+                                        {{ $bien->intitule }} [Ref. #{{ $bien->reference }}]
+                                    </h3>
+                                    <p class="popular__description">
+                                        {{ $bien->adresse }} <i class='bx bxs-map'></i>
+                                    </p>
+                                </div>
+                            </article>
+                        @endforeach
                     </div>
-
+        
                     <div class="swiper-button-next">
                         <i class='bx bx-chevron-right'></i>
                     </div>
-                    
+        
                     <div class="">
-                       <a href="biens">voir plus...</a>
+                        <a href="{{ route('biens.index') }}">voir plus...</a>
                     </div>
                     <div class="swiper-button-prev">
-                        <i class='bx bx-chevron-left' ></i>
+                        <i class='bx bx-chevron-left'></i>
                     </div>
                 </div>
             </div>
         </section>
+        
+        
+        
 
         <!--==================== VALUE ====================-->
         <section class="value section" id="value">
@@ -411,42 +302,7 @@
                     
                 </div>
             </section>
-
-            <div class="full-row">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="text-secondary double-down-line text-center mb-5">Comment Ça Marche</h2>
-                            </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="icon-thumb-one text-center mb-5">
-                                {{-- <div class="bg-primary text-white rounded-circle position-absolute z-index-9">1</div> --}}
-                                <div class="left-arrow"><i class="flaticon-investor flat-medium icon-primary" aria-hidden="true"></i></div>
-                                <h5 class="text-secondary mt-5 mb-4">Discussion</h5>
-                                <p> Nous débutons par une discussion pour comprendre vos besoins et attentes spécifiques en matière de biens immobiliers.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="icon-thumb-one text-center mb-5">
-                                {{-- <div class="bg-primary text-white rounded-circle position-absolute z-index-9">2</div> --}}
-                                <div class="left-arrow"><i class="flaticon-search flat-medium icon-primary" aria-hidden="true"></i></div>
-                                <h5 class="text-secondary mt-5 mb-4">Révision des Documents</h5>
-                                <p>Nous passons en revue tous les documents nécessaires pour nous assurer que tout est en ordre et conforme aux régulations en vigueur. </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="icon-thumb-one text-center mb-5">
-                                {{-- <div class="bg-primary text-white rounded-circle position-absolute z-index-9">3</div> --}}
-                                <div><i class="flaticon-handshake flat-medium icon-primary" aria-hidden="true"></i></div>
-                                <h5 class="text-secondary mt-5 mb-4">Acquisition</h5>
-                                <p>Une fois les étapes précédentes complétées, nous vous aidons à finaliser l'acquisition de votre bien immobilier en toute sérénité. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </section>
 
             <!--==================== CONTACT ====================-->
             <section class="contact section" id="contact">
@@ -633,25 +489,7 @@
             <div class="footer__info container">
                 <span class="footer__copy">
                     &#169; Holding Ahmad Loyal Business Invest.
-                </span>
-
-                <div class="footer__privacy">
-                    <a href="#">Conditions et accords</a>
-                    <a href="#">Politique de confidentialité</a>
-                </div>
-            </div>
-
-        </footer>
-
-        <!--========== SCROLL UP ==========-->
-        <a href="#" class="scrollup" id="scroll-up">
-            <i class='bx bx-chevrons-up'></i>
-        </a>
-
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src="{{ asset('js/scrollreveal.min.js') }}"></script>
-
-        <!--=============== SWIPER JS ===============-->
+->
         <script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
 
         <!--=============== MAIN JS ===============-->
