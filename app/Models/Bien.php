@@ -32,7 +32,7 @@ class Bien extends Model
 
     public function typebien()
     {
-        return $this->belongsTo(TypeBien::class);
+        return $this->belongsTo(TypeBien::class, 'type', 'name');
     }
 
     public function images()

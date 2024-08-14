@@ -11,14 +11,10 @@
         </a>
 
         @auth
-       <form action="{{ route('logout') }}" method="POST" class="d-inline">
-            @csrf
-            <button type="submit" class="button nav__button">Déconnexion</button>
-        </form>
-        
-
+    
         <div class="nav__menu">
             <ul class="nav__list">
+
                 <li class="nav__item">
                     <a href="{{ route('biens.gestion') }}" class="nav__link active-link">
                         <i class='bx bx-home-alt-2'></i>
@@ -45,6 +41,13 @@
                         <i class='bx bx-phone'></i>
                         <span>Types d'Accompagnements</span>
                     </a>
+                </li>
+
+                <li class="nav__item">
+                    <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                        @csrf
+                        <button type="submit" class="button nav__button">Déconnexion</button>
+                    </form>
                 </li>
             </ul>
         </div>
@@ -91,7 +94,5 @@
       
         @endguest
 
-        <!-- Theme change button -->
-        <i class='bx bx-moon change-theme' id="theme-button"></i>
     </nav>
 </header>

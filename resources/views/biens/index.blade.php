@@ -33,10 +33,11 @@
                                                             </div>
                                                         @endforeach
                                                     </div>
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ $bien->id }}" data-bs-slide="prev">
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ $bien->name }}" data-bs-slide="prev">
                                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                         <span class="visually-hidden">Previous</span>
                                                     </button>
+                                                    
                                                     <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ $bien->id }}" data-bs-slide="next">
                                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                         <span class="visually-hidden">Next</span>
@@ -58,6 +59,9 @@
                                                     <div class="float-left text-capitalize">
                                                         <i class="fa-solid fa-house text-primary mr-1"></i> Type : {{ $bien->type }}
                                                     </div>
+
+                                                    <label for="type" class="form-label">Type</label>
+           
                                                     <div class="float-right">
                                                         <i class="far fa-calendar-alt text-primary mr-1"></i> {{ \Carbon\Carbon::parse($bien->datePublication)->format('d-m-Y') }}
                                                     </div>

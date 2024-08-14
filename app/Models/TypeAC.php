@@ -10,11 +10,12 @@ class TypeAC extends Model
     use HasFactory;
 
     protected $table = 'typeacs';  // Assurez-vous que cela correspond au nom de votre table
-
-    protected $fillable = ['nom'];
+    protected $fillable = ['name'];
 
     public function accompagnements()
     {
-        return $this->hasMany(Accompagnement::class, 'typeac_id');
+        return $this->hasMany(Accompagnement::class);
     }
+
+    
 }

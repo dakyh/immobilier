@@ -2,7 +2,18 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Bien;
 use Illuminate\Http\Request;
+
+
+
+
+use App\Models\Image;
+use App\Models\TypeBien;
+
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -21,8 +32,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $selectedType = $request->input('types', 'all');
+
+        // Filter biens based on the selected type
+        $biens = Bien::when($selectedType != 'all', function ($query) use ($selectedType) {
+            $query->where('type', $selectedType);
+        })->get();
+
+        // No need to fetch types from another table
+        $types = Bien::select('type')->distinct()->get();
+
+        return view('home', compact('biens', 'types', 'selectedType'));
     }
 }

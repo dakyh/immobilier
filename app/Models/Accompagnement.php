@@ -26,6 +26,8 @@ class Accompagnement extends Model
 
     public function typeac()
     {
-        return $this->belongsTo(TypeAC::class, 'typeac_id'); // Ajout de la clé étrangère
+        return $this->belongsTo(TypeAC::class,'type', 'name'); // Ajout de la clé étrangère
     }
+
+    
 }

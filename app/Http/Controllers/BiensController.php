@@ -53,7 +53,7 @@ class BiensController extends Controller
             'description' => 'required',
             'surface' => 'required|integer',
             'prix' => 'required|numeric',
-            'type' => 'required|exists:typebiens,id',
+            'type' => 'required|exists:typebiens,name',
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',
@@ -92,48 +92,49 @@ class BiensController extends Controller
     }
 
     public function update(Request $request, Bien $bien)
-    {
-        $validatedData = $request->validate([
-            'reference' => 'required|unique:biens,reference,' . $bien->id,
-            'intitule' => 'required',
-            'description' => 'required',
-            'surface' => 'required|integer',
-            'prix' => 'required|numeric',
-            'type' => 'required|exists:typebiens,id',
-            'adresse' => 'required',
-            'datePublication' => 'required|date',
-            'etat' => 'required',
-            'nombreDePieces' => 'nullable|integer',
-            'nombreDeChambres' => 'nullable|integer',
-            'nombreDeSallesDeBain' => 'nullable|integer',
-            'cloture' => 'nullable|boolean',
-            'nombreDAppartements' => 'nullable|integer',
-            'files.*' => 'nullable|image', // Change to files.* for multiple images
-        ]);
-        // dd($validatedData);
-        $bien->update($validatedData);
+{
+    $validatedData = $request->validate([
+        'reference' => 'required|unique:biens,reference,' . $bien->id,
+        'intitule' => 'required',
+        'description' => 'required',
+        'surface' => 'required|integer',
+        'prix' => 'required|numeric',
+        'type' => 'required|string', // Ici, on accepte tout type sous forme de chaîne
+        'adresse' => 'required',
+        'datePublication' => 'required|date',
+        'etat' => 'required',
+        'nombreDePieces' => 'nullable|integer',
+        'nombreDeChambres' => 'nullable|integer',
+        'nombreDeSallesDeBain' => 'nullable|integer',
+        'cloture' => 'nullable|boolean',
+        'nombreDAppartements' => 'nullable|integer',
+        'files.*' => 'nullable|image',
+    ]);
 
-        if ($request->hasFile('files')) {
-            // Supprimer les anciennes images
-            foreach ($bien->images as $image) {
-                Storage::delete('public/' . str_replace('/storage/', '', $image->url));
-                $image->delete();
-            }
+    $bien->update($validatedData);
 
-            foreach ($request->file('files') as $file) {
-                $path = $file->store('images', 'public');
-                $url = Storage::url($path);
-
-                Image::create([
-                    'nom' => $request->input('intitule'),
-                    'url' => $url,
-                    'bien_id' => $bien->id,
-                ]);
-            }
+    if ($request->hasFile('files')) {
+        // Supprimer les anciennes images
+        foreach ($bien->images as $image) {
+            Storage::delete('public/' . str_replace('/storage/', '', $image->url));
+            $image->delete();
         }
 
-        return redirect()->route('biens.index')->with('success', 'Bien mis à jour avec succès');
+        foreach ($request->file('files') as $file) {
+            $path = $file->store('images', 'public');
+            $url = Storage::url($path);
+
+            Image::create([
+                'nom' => $request->input('intitule'),
+                'url' => $url,
+                'bien_id' => $bien->id,
+            ]);
+        }
     }
+
+    return redirect()->route('biens.index')->with('success', 'Bien mis à jour avec succès');
+}
+
 
         public function show($id)
     {

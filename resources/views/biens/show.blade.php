@@ -35,22 +35,13 @@
             Holding Ahmad Loyal Business Invest <i class='bx bxs-home-alt-2'></i>
         </a>
 
-<<<<<<< HEAD
-=======
-@section('content')
-<div class="container mt-5">
-    <br>
-    <br>
-    <h1 class="mb-4">Détails du Bien</h1>
-    <div class="card">
->>>>>>> c518b1b3ffc4d6436964a5f5773f00bb53b5b9eb
         
 
         <!-- Theme change button -->
         <i class='bx bx-moon change-theme' id="theme-button" ></i>
 
-        <a href="login" class="button nav__button">
-            Mon espace
+        <a href="{{ route('welcome') }}" class="button nav__button">
+            Accueil
         </a>
     </nav>
 </header>

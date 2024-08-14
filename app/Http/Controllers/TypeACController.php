@@ -20,11 +20,11 @@ class TypeACController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nom' => 'required|string|max:255',
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
         ]);
 
-        TypeAC::create($request->all());
+        TypeAC::create($validatedData);
 
         return redirect()->route('typeacs.index')->with('success', 'TypeAC ajouté avec succès.');
     }
@@ -36,11 +36,11 @@ class TypeACController extends Controller
 
     public function update(Request $request, TypeAC $typeac)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
         ]);
 
-        $typeac->update($request->all());
+        $typeac->update($validatedData);
 
         return redirect()->route('typeacs.index')->with('success', 'TypeAC mis à jour avec succès.');
     }

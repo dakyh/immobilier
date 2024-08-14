@@ -32,7 +32,7 @@
             <label for="type" class="form-label">Type</label>
             <select name="type" class="form-select" required>
                 @foreach($types as $type)
-                    <option value="{{ $type->id }}" {{ $bien->type == $type->id ? 'selected' : '' }}>
+                    <option value="{{ $type->name }}" {{ $bien->type == $type->name ? 'selected' : '' }}>
                         {{ $type->name }}
                     </option>
                 @endforeach

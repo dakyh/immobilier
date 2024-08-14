@@ -24,8 +24,8 @@ use App\Http\Controllers\WelcomeController;
 
 
 
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
-Route::get('/', [WelcomeController::class, 'index']);
 
 
 // Auth::routes();
@@ -34,12 +34,13 @@ Auth::routes([
 ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// Routes nécessitant une connexion
 Route::middleware(['auth'])->group(function () {
     Route::get('biens/gestion', [BiensController::class, 'gestion'])->name('biens.gestion');
     Route::resource('typebiens', TypeBienController::class);
-    Route::resource('biens', BiensController::class);
+    Route::resource('biens', BiensController::class)->except(['show']); // Exclure 'show' car déjà défini
     Route::resource('images', ImagesController::class);
     Route::resource('accompagnements', AccompagnementsController::class);
     Route::resource('typeacs', TypeACController::class);
 });
+Route::get('/biens/{bien}', [BiensController::class, 'show'])->name('biens.show');

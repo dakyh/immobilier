@@ -12,8 +12,8 @@
             @method('PUT')
         @endif
         <div class="mb-3">
-            <label for="nom" class="form-label">Nom</label>
-            <input type="text" name="nom" class="form-control" value="{{ isset($typeac) ? $typeac->nom : '' }}" required>
+            <label for="name" class="form-label">Nom</label>
+            <input type="text" name="name" class="form-control" value="{{ isset($typeac) ? $typeac->name : '' }}" required>
         </div>
         <button type="submit" class="btn btn-primary">{{ isset($typeac) ? 'Mettre à jour' : 'Ajouter' }}</button>
     </form>

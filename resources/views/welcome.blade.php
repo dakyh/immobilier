@@ -149,30 +149,33 @@
                 <div class="popular__container swiper">
                     <div class="swiper-wrapper">
                         @foreach($biens as $bien)
-                            <article class="popular__card swiper-slide">
-                                <div id="carousel-{{ $bien->id }}" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
-                                        @if($bien->images->isNotEmpty())
-                                            <div class="carousel-item active">
+                        <article class="popular__card swiper-slide">
+                            <div id="carousel-{{ $bien->id }}" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    @if($bien->images->isNotEmpty())
+                                        <div class="carousel-item active">
+                                            <a href="{{ route('biens.show', $bien->id) }}">
                                                 <img src="{{ asset($bien->images->first()->url) }}" class="card-img-top fixed-size" alt="{{ $bien->intitule }}">
-                                            </div>
-                                        @endif
-                                    </div>
-                                    <!-- Carousel controls omitted since there will be only one image -->
+                                            </a>
+                                        </div>
+                                    @endif
                                 </div>
-                                
-                                <div class="popular__data">
-                                    <h2 class="popular__price">
-                                        {{ number_format($bien->prix, 0, ',', ' ') }} <span>€</span>
-                                    </h2>
-                                    <h3 class="popular__title">
-                                        {{ $bien->intitule }} [Ref. #{{ $bien->reference }}]
-                                    </h3>
-                                    <p class="popular__description">
-                                        {{ $bien->adresse }} <i class='bx bxs-map'></i>
-                                    </p>
-                                </div>
-                            </article>
+                                <!-- Carousel controls omitted since there will be only one image -->
+                            </div>
+                        
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    {{ number_format($bien->prix, 0, ',', ' ') }} <span>€</span>
+                                </h2>
+                                <h3 class="popular__title">
+                                   [Ref = {{ $bien->reference }}]
+                                </h3>
+                                <p class="popular__description">
+                                    {{ $bien->adresse }} <i class='bx bxs-map'></i>
+                                </p>
+                            </div>
+                        </article>
+                        
                         @endforeach
                     </div>
         
