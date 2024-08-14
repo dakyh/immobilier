@@ -5,6 +5,16 @@
     <br>
     <br>
     <h1 class="mb-4">Ajouter un Bien</h1>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
     <form action="{{ route('biens.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -31,7 +41,7 @@
             <label for="type" class="form-label">Type</label>
             <select name="type" class="form-select" required>
                 @foreach($types as $type)
-                    <option value="{{ $type->name }}">{{ $type->name }}</option>
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
                 @endforeach
             </select>
         </div>

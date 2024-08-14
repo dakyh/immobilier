@@ -19,7 +19,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ID</th>
+                {{-- <th>ID</th> --}}
                 <th>Référence</th>
                 <th>Intitulé</th>
                 <th>Type</th>
@@ -32,7 +32,7 @@
         <tbody>
             @foreach($biens as $bien)
                 <tr>
-                    <td>{{ $bien->id }}</td>
+                    {{-- <td>{{ $bien->id }}</td> --}}
                     <td>{{ $bien->reference }}</td>
                     <td>{{ $bien->intitule }}</td>
                     <td>{{ $bien->type }}</td>

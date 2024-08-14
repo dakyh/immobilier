@@ -47,13 +47,14 @@ class BiensController extends Controller
     
     public function store(Request $request)
     {
+        // dd($request);
         $validatedData = $request->validate([
             'reference' => 'required|unique:biens',
             'intitule' => 'required',
             'description' => 'required',
             'surface' => 'required|integer',
             'prix' => 'required|numeric',
-            'type' => 'required|exists:typebiens,name',
+            'type' => 'required|exists:typebiens,id',
             'adresse' => 'required',
             'datePublication' => 'required|date',
             'etat' => 'required',
@@ -64,7 +65,6 @@ class BiensController extends Controller
             'nombreDAppartements' => 'nullable|integer',
             'files.*' => 'required|image', // Change to files.* for multiple images
         ]);
-        // dd($validatedData);
 
 
         $bien = Bien::create($validatedData);
@@ -93,6 +93,7 @@ class BiensController extends Controller
 
     public function update(Request $request, Bien $bien)
 {
+    // dd($request);
     $validatedData = $request->validate([
         'reference' => 'required|unique:biens,reference,' . $bien->id,
         'intitule' => 'required',
@@ -106,7 +107,6 @@ class BiensController extends Controller
         'nombreDePieces' => 'nullable|integer',
         'nombreDeChambres' => 'nullable|integer',
         'nombreDeSallesDeBain' => 'nullable|integer',
-        'cloture' => 'nullable|boolean',
         'nombreDAppartements' => 'nullable|integer',
         'files.*' => 'nullable|image',
     ]);
@@ -138,7 +138,10 @@ class BiensController extends Controller
 
         public function show($id)
     {
-        $bien = Bien::with('images')->findOrFail($id);
+        // $bien = Bien::with('images')->findOrFail($id);
+        $bien = Bien::with('images', 'typebien')->findOrFail($id);
+        // dd($bien->typebien->name);
+
         return view('biens.show', compact('bien'));
     }
 

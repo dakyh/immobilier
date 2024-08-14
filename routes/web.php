@@ -38,9 +38,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth'])->group(function () {
     Route::get('biens/gestion', [BiensController::class, 'gestion'])->name('biens.gestion');
     Route::resource('typebiens', TypeBienController::class);
-    Route::resource('biens', BiensController::class)->except(['show']); // Exclure 'show' car déjà défini
+    Route::resource('biens', BiensController::class)->except(['show','index']); // Exclure 'show' car déjà défini
     Route::resource('images', ImagesController::class);
     Route::resource('accompagnements', AccompagnementsController::class);
     Route::resource('typeacs', TypeACController::class);
 });
+Route::get('/biens', [BiensController::class, 'index'])->name('biens.index');
 Route::get('/biens/{bien}', [BiensController::class, 'show'])->name('biens.show');

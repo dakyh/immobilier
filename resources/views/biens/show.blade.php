@@ -50,7 +50,7 @@
   <div class="home__container container ">
       <div class="">
           <h1 class="home__title">
-              Découvrez <br> nos différentes propriétées
+            Parcourez <br> notre sélection de propriétés
           </h1>
           
 
@@ -112,13 +112,13 @@
                         <ul>
                             
                             {{-- si appartements --}}
-                            <li><span class="text-secondary">1pieces</span> nombre de pieces</li>
-                            <li><span class="text-secondary">2rooms</span> nombre de chambres</li>
-                            <li><span class="text-secondary">4bains</span> nombre de salles de Bains</li>
+                            <li><span class="text-secondary"> {{ $bien->nombreDePieces==null?'N/R':$bien->nombreDePieces  }} </span> nombre de pieces</li>
+                            <li><span class="text-secondary"> {{ $bien->nombreDeChambres==null?'N/R':$bien->nombreDeChambres  }} </span> nombre de chambres</li>
+                            <li><span class="text-secondary"> {{ $bien->nombreDeSallesDeBain==null?'N/R':$bien->nombreDeSallesDeBain  }} </span> nombre de salles de Bains</li>
                             {{-- si terrain --}}
-                            <li><span class="text-secondary">état</span> clôturé</li>
+                            <li><span class="text-secondary"> {{ $bien->cloture==null?'N/R':$bien->cloture  }} </span> clôturé</li>
                             {{-- si immeuble --}}
-                            <li><span class="text-secondary">1ap</span> nombre d'appartements</li>
+                            <li><span class="text-secondary"> {{ $bien->nombreDAppartements==null?'N/R':$bien->nombreDAppartements  }} </span> nombre d'appartements</li>
 
                         </ul>
                     </div>
@@ -132,7 +132,7 @@
                                 <tr>
                                     
                                     <td>Type Propriétée :</td>
-                                    <td class="text-capitalize">{{ $bien->type }}</td>
+                                    <td class="text-capitalize">{{ $bien->typebien->name }}</td>
                                 </tr>
                                 <tr>
                                     

@@ -7,7 +7,7 @@
     <div class="home__container container ">
         <div class="">
             <h1 class="home__title">
-                Découvrez <br> nos différentes propriétés
+                Parcourez <br> notre sélection de propriétés
             </h1>
         </div>
     </div>
@@ -57,10 +57,10 @@
                                                 </div>
                                                 <div class="px-4 pb-4 d-inline-block w-100">
                                                     <div class="float-left text-capitalize">
-                                                        <i class="fa-solid fa-house text-primary mr-1"></i> Type : {{ $bien->type }}
+                                                        <i class="fa-solid fa-house text-primary mr-1"></i> Type : {{ $bien->typebien->name }}
                                                     </div>
 
-                                                    <label for="type" class="form-label">Type</label>
+                                                   
            
                                                     <div class="float-right">
                                                         <i class="far fa-calendar-alt text-primary mr-1"></i> {{ \Carbon\Carbon::parse($bien->datePublication)->format('d-m-Y') }}

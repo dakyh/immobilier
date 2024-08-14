@@ -27,6 +27,8 @@ class WelcomeController extends Controller
 
         // No need to fetch types from another table
         $types = Bien::select('type')->distinct()->get();
+        // dd($biens);     
+
 
         return view('welcome', compact('biens', 'types', 'selectedType'));
     }

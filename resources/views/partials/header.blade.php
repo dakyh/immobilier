@@ -6,9 +6,7 @@
     </style>
     
     <nav class="nav container">
-        <a href="{{ route('home') }}" class="nav__logo">
-            Holding Ahmad Loyal Business Invest <i class='bx bxs-home-alt-2'></i>
-        </a>
+        
 
         @auth
     

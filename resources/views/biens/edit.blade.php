@@ -5,6 +5,15 @@
     <br>
     <br>
     <h1 class="mb-4">Modifier un Bien</h1>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <form action="{{ route('biens.update', $bien->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
@@ -32,9 +41,9 @@
             <label for="type" class="form-label">Type</label>
             <select name="type" class="form-select" required>
                 @foreach($types as $type)
-                    <option value="{{ $type->name }}" {{ $bien->type == $type->name ? 'selected' : '' }}>
-                        {{ $type->name }}
-                    </option>
+                <option value="{{ $type->id }}" {{ $bien->type == $type->id ? 'selected' : '' }}>
+                    {{ $type->name }}
+                </option>
                 @endforeach
             </select>
         </div>
@@ -64,8 +73,9 @@
         </div>
         <div class="mb-3">
             <label for="cloture" class="form-label">Clôture</label>
-            <input type="checkbox" name="cloture" class="form-check-input" {{ $bien->cloture ? 'checked' : '' }}>
+            <input type="checkbox" name="cloture" class="form-check-input" >
         </div>
+
         <div class="mb-3">
             <label for="nombreDAppartements" class="form-label">Nombre d'Appartements</label>
             <input type="number" name="nombreDAppartements" class="form-control" value="{{ $bien->nombreDAppartements }}">
