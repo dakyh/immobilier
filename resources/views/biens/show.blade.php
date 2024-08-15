@@ -167,15 +167,10 @@
             </div>
             <div class="col-lg-4">
                 <div class="sidebar-widget mt-5">
-                    <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Recent Property Add</h4>
+                    <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4"></h4>
                     <ul class="property_list_widget">
                     
-                        
-                        <li> <img src="{{ asset('img/home.jpg') }}" alt="pimage">
-                            <h6 class="text-secondary hover-text-primary text-capitalize"><a href="#">dfghjkl</a></h6>
-                            <span class="font-14"><i class="fas fa-map-marker-alt icon-primary icon-small"></i> kk</span>
-                            
-                        </li>
+                    
 
                     </ul>
                 </div>
