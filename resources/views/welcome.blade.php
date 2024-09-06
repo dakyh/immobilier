@@ -214,7 +214,7 @@
                             <header class="value__accordion-header">
                                 <i class='bx bxs-shield-x value__accordion-icon' ></i>
                                 <h3 class="value__accordion-title">
-                                    service1
+                                    Service de Concierge 
                                 </h3>
                                 <div class="value__accordion-arrow">
                                     <i class='bx bxs-down-arrow' ></i>
@@ -223,7 +223,7 @@
 
                             <div class="value__accordion-content">
                                 <p class="value__accordion-description">
-                                    description
+                                    Offrez-vous un confort supplémentaire avec notre service de concierge, disponible pour gérer vos besoins quotidiens, tels que la réception de colis, la réservation de services et bien plus encore.
                                 </p>
                             </div>
                         </div>
@@ -232,7 +232,7 @@
                             <header class="value__accordion-header">
                                 <i class='bx bxs-x-square value__accordion-icon' ></i>
                                 <h3 class="value__accordion-title">
-                                    service2
+                                    Gestion Locative 
                                 </h3>
                                 <div class="value__accordion-arrow">
                                     <i class='bx bxs-down-arrow' ></i>
@@ -241,9 +241,7 @@
 
                             <div class="value__accordion-content">
                                 <p class="value__accordion-description">
-                                    Le prix que nous vous proposons est le meilleur pour vous, 
-                                    nous garantissons qu'il n'y aura pas de changement de prix sur votre 
-                                    propriété en raison de divers coûts imprévus qui pourraient survenir.
+                                    Confiez-nous la gestion de vos biens locatifs, incluant la recherche de locataires, la perception des loyers, et le suivi des obligations légales.
                                 </p>
                             </div>
                         </div>
@@ -252,7 +250,7 @@
                             <header class="value__accordion-header">
                                 <i class='bx bxs-bar-chart-square value__accordion-icon' ></i>
                                 <h3 class="value__accordion-title">
-                                    service3
+                                    Réparation et Maintenance 
                                 </h3>
                                 <div class="value__accordion-arrow">
                                     <i class='bx bxs-down-arrow' ></i>
@@ -260,8 +258,7 @@
 
                                 <div class="value__accordion-content">
                                     <p class="value__accordion-description">
-                                        Chaque jour, nous nous efforçons de rester très compétitifs sur le 
-                                        marché en vous proposant les meilleures résidences aux meilleurs prix.
+                                        Garantissez la durabilité de vos installations avec notre service de réparation et maintenance, couvrant les petites réparations domestiques et les interventions techniques.
                                     </p>
                                 </div>
                             </div>
@@ -270,7 +267,7 @@
                                 <header class="value__accordion-header">
                                     <i class='bx bxs-check-square value__accordion-icon' ></i>
                                     <h3 class="value__accordion-title">
-                                        services4
+                                        Gestion des Démarches Administratives 
                                     </h3>
                                     <div class="value__accordion-arrow">
                                         <i class='bx bxs-down-arrow ' ></i>
@@ -279,18 +276,17 @@
 
                                 <div class="value__accordion-content">
                                     <p class="value__accordion-description">
-                                        Nous nous engageons à respecter les données de nos clients.
-                                        Vos données sont chiffrés et stockées sur des serveurs français.
+                                        Simplifiez vos processus avec notre service de gestion des démarches administratives, incluant la gestion des contrats, la documentation et la correspondance.
                                     </p>
                                 </div>
                             </div>
-                            <div class="value__accordion-item">
+                            {{-- <div class="value__accordion-item">
                                 <header class="value__accordion-header">
                                     <a href="services">voir plus...</a>
                                     
                                 </header>
 
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     

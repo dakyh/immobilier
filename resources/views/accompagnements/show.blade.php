@@ -12,7 +12,7 @@
         <div class="card-body">
             <p><strong>Intitulé:</strong> {{ $accompagnement->intitule }}</p>
             <p><strong>Description:</strong> {{ $accompagnement->description }}</p>
-            <p><strong>Type:</strong> {{ $accompagnement->typeac->nom }}</p>
+            <p><strong>Type:</strong> {{ $accompagnement->typeac->name?? '' }}</p>
             <p><strong>Date de Publication:</strong> {{ $accompagnement->datePublication }}</p>
             <a href="{{ route('accompagnements.edit', $accompagnement->id) }}" class="btn btn-warning me-2">Modifier</a>
             <form action="{{ route('accompagnements.destroy', $accompagnement->id) }}" method="POST" style="display:inline-block;">

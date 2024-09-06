@@ -9,7 +9,7 @@
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr>
-                <th>ID</th>
+                
                 <th>Intitulé</th>
                 <th>Description</th>
                 <th>Type</th>
@@ -20,7 +20,7 @@
         <tbody>
             @foreach($accompagnements as $accompagnement)
                 <tr>
-                    <td>{{ $accompagnement->id }}</td>
+                    {{-- <td>{{ $accompagnement->id }}</td> --}}
                     <td>{{ $accompagnement->intitule }}</td>
                     <td>{{ $accompagnement->description }}</td>
                     <td>{{ $accompagnement->type }}</td>
